@@ -4,10 +4,6 @@
   margin-top: 45px;
   margin-bottom: 20px;
 
-  .album-title.collection, .album-artist.collection, .album-meta-info.collection {
-    line-height: 150%;
-  }
-
   .album-title-collection {
     font-size: 16px;
     @include font-open-sans(300);
@@ -15,14 +11,23 @@
 
   .album-artist.collection {
     font-size: 16px;
-    color: rgba($medium-purple, .9);
-
+    color: rgba(white, .6);
+    a {
+      color: rgba(white, .6);
+    }
     @include font-open-sans(300);
   }
 
   .album-meta-info.collection {
     font-size: 16px;
+    color: rgba(white, .6);
     @include font-open-sans(300);
   }
+  
+  .thumbnail {
+    padding: 0px;
+    border: 0 none;
+  }
+ 
 
 }
