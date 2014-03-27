@@ -34,10 +34,46 @@ var albumMarconi = {
 };
 
 var createSongRow = function(songNumber, songName, songLength) {
+
+   var $newSongRow = $('<tr>');
+  $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
+  $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
+  $newSongRow.append('<td class="col-md-9">' + songLength + '</td>');
+
+  return $newSongRow;
+
 };
 
 var changeAlbumView = function(album) {
   // Your code goes here
+  var $albumTitle = $('.album-title');
+  $albumTitle.text(album.name);
+
+
+  var $albumArtist = $('.album-artist');
+  $albumArtist.text(album.artist);
+
+  var $albumMeta = $('.album-meta-info');
+  $albumMeta.text(album.year + " on " + album.label);
+
+  var $albumImage = $('.album-image img');
+  $albumImage.attr('src', album.albumArtUrl);
+
+  var $songTable = $('album-song-list-table');
+  $songTable.empty();
+
+  // Iterate over all songs that we have in our 'albumSongList'.
+  for (var i = 0; i < albumSongList.length; i++) {
+    // Get a reference to the specific song data.
+    var songData = albumSongList[i];
+
+    // Create the song row that we'll insert.
+    var $newRow = createSongRow(i, songData.name, songData.length);
+
+    // Append the new row onto the end of the table.
+    $songTable.append($newRow);
+  }
+
 };
 
 // This 'if' condition is used to preven the jQuery modifications
@@ -48,5 +84,15 @@ if (document.URL.match(/\/album/)) {
   $(document).ready(function() {
     // Code to switch views goes here.
     var albums = [albumPicasso, albumMarconi];
+    var albumImageUrls = ['/images/album-placeholder.png', '/images/album-placeholder2.png'];
+    var imageUrlIndex = 0;
+
+    $albumImage.click(function(event) {
+      $albumImage.attr('src', albumImageUrls[imageUrlIndex]);
+
+      // This line toggles which image we'll be showing on next click.
+      //   - The value of 'imageUrlIndex' will this pattern 1, 0, 1, 0, 1,... because of the modulo opeator ('%').
+      imageUrlIndex = (imageUrlIndex + 1) % 2;
+    });
   });
 }
