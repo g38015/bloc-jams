@@ -84,15 +84,17 @@ if (document.URL.match(/\/album/)) {
   $(document).ready(function() {
     // Code to switch views goes here.
     var albums = [albumPicasso, albumMarconi];
-    var albumImageUrls = ['/images/album-placeholder.png', '/images/album-placeholder2.png'];
-    var imageUrlIndex = 0;
+     changeAlbumView(albums[0])
 
-    $albumImage.click(function(event) {
-      $albumImage.attr('src', albumImageUrls[imageUrlIndex]);
+     var albumIndex = 0;
+     var $albumImage = $('.album-image img');
+     $albumImage.click(function(event) {
+       // This line toggles which image we'll be showing on next click.
+       //   - The calculation '(imageUrlIndex + 1) % 2' will follow this pattern 1, 0, 1, 0, 1 because of the modulo opeator ('%').
+       albumIndex = (albumIndex + 1) % albums.length;
 
-      // This line toggles which image we'll be showing on next click.
-      //   - The value of 'imageUrlIndex' will this pattern 1, 0, 1, 0, 1,... because of the modulo opeator ('%').
-      imageUrlIndex = (imageUrlIndex + 1) % 2;
-    });
+       changeAlbumView(albums[albumIndex]);
+     });
+
   });
 }
