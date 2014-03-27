@@ -86,12 +86,8 @@ if (document.URL.match(/\/album/)) {
     var albums = [albumPicasso, albumMarconi];
      changeAlbumView(albums[0]);
 
-     
-
      var albumIndex = 0;
      var $albumImage = $('.album-image img');
-
-    
 
      $albumImage.click(function(event) {
 
