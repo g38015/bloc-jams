@@ -38,7 +38,7 @@ var createSongRow = function(songNumber, songName, songLength) {
    var $newSongRow = $('<tr>');
   $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
   $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
-  $newSongRow.append('<td class="col-md-9">' + songLength + '</td>');
+  $newSongRow.append('<td class="col-md-2">' + songLength + '</td>');
 
   return $newSongRow;
 
@@ -46,33 +46,33 @@ var createSongRow = function(songNumber, songName, songLength) {
 
 var changeAlbumView = function(album) {
   // Your code goes here
-  var $albumTitle = $('.album-title');
-  $albumTitle.text(album.name);
 
+   // Update the album title
+   var $albumTitle = $('.album-title');
+   $albumTitle.text(album.name);
 
-  var $albumArtist = $('.album-artist');
-  $albumArtist.text(album.artist);
+   // Update the album artist
+   var $albumArtist = $('.album-artist');
+   $albumArtist.text(album.artist);
 
-  var $albumMeta = $('.album-meta-info');
-  $albumMeta.text(album.year + " on " + album.label);
+   // Update the meta information
+   var $albumMeta = $('.album-meta-info');
+   $albumMeta.text(album.year + " on " + album.label);
 
-  var $albumImage = $('.album-image img');
-  $albumImage.attr('src', album.albumArtUrl);
+   // Update the album image
+   var $albumImage = $('.album-image img');
+   $albumImage.attr('src', album.albumArtUrl);
 
-  var $songTable = $('album-song-list-table');
-  $songTable.empty();
+   // Update the Song List
+   var $songList = $(".album-song-list-table");
+   $songList.empty();
 
-  // Iterate over all songs that we have in our 'albumSongList'.
-  for (var i = 0; i < albumSongList.length; i++) {
-    // Get a reference to the specific song data.
-    var songData = albumSongList[i];
-
-    // Create the song row that we'll insert.
-    var $newRow = createSongRow(i, songData.name, songData.length);
-
-    // Append the new row onto the end of the table.
-    $songTable.append($newRow);
-  }
+   var songs = album.songs;
+   for (var i = 0; i < songs.length; i++) {
+     var songData = songs[i];
+     var $newRow = createSongRow(i, songData.name, songData.length);
+     $songList.append($newRow);
+   }
 
 };
 
@@ -84,11 +84,19 @@ if (document.URL.match(/\/album/)) {
   $(document).ready(function() {
     // Code to switch views goes here.
     var albums = [albumPicasso, albumMarconi];
-     changeAlbumView(albums[0])
+     changeAlbumView(albums[0]);
+
+     
 
      var albumIndex = 0;
      var $albumImage = $('.album-image img');
+
+    
+
      $albumImage.click(function(event) {
+
+        console.log('clicked');
+
        // This line toggles which image we'll be showing on next click.
        //   - The calculation '(imageUrlIndex + 1) % 2' will follow this pattern 1, 0, 1, 0, 1 because of the modulo opeator ('%').
        albumIndex = (albumIndex + 1) % albums.length;
