@@ -29,5 +29,74 @@
     border: 0 none;
   }
  
+}
 
+.collection-album-image-container {
+  position: relative;
+
+  // This line forces the Album image not to overflow the container div.
+  //  - Try it out both ways to see the difference.
+  img {
+    max-width: 100%;
+  }
+}
+
+// Overlay container used to hold our buttons.
+.collection-album-image-overlay {
+  // Make this overlap the image by setting the position to absolute and top offset to 0px.
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .08);
+  z-index: 10;
+}
+
+// Content container that holds all of our controls.
+//  - Note: we also need to absolutely position this element to get the buttons
+//    to be near the bottom of the overlay.
+.collection-overlay-content {
+  position: absolute;
+  bottom: 20px;
+
+  // Make this div stretch to fill and center the icons.
+  width: 100%;
+  text-align: center;
+}
+
+.collection-overlay-button {
+  $button-pink: #E5297F;
+  // Desired sizes for button and icon.
+  $overlay-button-size: 42px;
+  font-size: 20px;
+
+  // Default colors for button
+  background-color: white;
+  color: $button-pink;
+
+  // Make the button a circle
+  border-radius: 50% 50%;
+
+  // Make the container square by fixing the width and height.
+  display: inline-block;
+  width: $overlay-button-size;
+  height: $overlay-button-size;
+
+  // Make the button respond visually to a mouse hover.
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $button-pink;
+  }
+
+  // Make the icons centered vertically.
+  //  - This trick only works for text that doesn't span two lines.
+  i {
+    line-height: $overlay-button-size;
+  }
+  // Add padding to the button to make it look visually centered.
+  .fa-play {
+    padding-left: 5px;
+  }
 }
