@@ -36,7 +36,7 @@ var albumMarconi = {
 var createSongRow = function(songNumber, songName, songLength) {
 
    var $newSongRow = $('<tr>');
-  $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
+  $newSongRow.append('<td class="col-md-1 play">' + songNumber + '</td>');
   $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
   $newSongRow.append('<td class="col-md-2">' + songLength + '</td>');
 
@@ -76,12 +76,33 @@ var changeAlbumView = function(album) {
 
 };
 
+ 
+
 // This 'if' condition is used to preven the jQuery modifications
 // from happening on non-Album view pages.
 //  - This line checks if the current url has "/album" in its path using a regex.
 if (document.URL.match(/\/album/)) {
   // Wait until the HTML is fully processed.
   $(document).ready(function() {
+
+    // Hover function
+    $( "h3" ).hover(function() {
+      $( this ).replaceWith( $( "<h3>Changed</h3>" ) );
+    }, function() {
+      $( this ).find( "h3:last" ).remove();
+    });
+ 
+    $( "h3.fade" ).hover(function() {
+      $( this ).fadeOut( 100 );
+      $( this ).fadeIn( 500 );
+    });
+
+    $( ".test" ).click(function() {
+      $( this ).slideUp();
+    });
+
+
+
     // Code to switch views goes here.
     var albums = [albumPicasso, albumMarconi];
      changeAlbumView(albums[0]);
