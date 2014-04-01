@@ -76,39 +76,44 @@ var changeAlbumView = function(album) {
 
 };
 
- 
+var buildAlbumOverlay = function() {
 
-// This 'if' condition is used to preven the jQuery modifications
-// from happening on non-Album view pages.
-//  - This line checks if the current url has "/album" in its path using a regex.
-if (document.URL.match(/\/album/)) {
-  // Wait until the HTML is fully processed.
-  $(document).ready(function() {
+  var template =
+      '<div class="collection-album-image-overlay">'
+    + '  <div class="collection-overlay-content">'
+    + '    <a class="collection-overlay-button">'
+    + '      <i class="fa fa-play"></i>'
+    + '    </a>'
+    + '    &nbsp;'
+    + '    <a class="collection-overlay-button">'
+    + '      <i class="fa fa-plus"></i>'
+    + '    </a>'
+    + '  </div>'
+    + '</div>'
+    ;
 
-    // Hover function
-    $( "h3" ).hover(function() {
-      $( this ).replaceWith( $( "<h3>Changed</h3>" ) );
+  return $(template); // Generate the DOM element with jQuery
+};
+
+var albumOverlay = function() {
+
+   // Hover function
+    $( ".album-image" ).hover(function() {
+      $( this ).append( buildAlbumOverlay() );
     }, function() {
-      $( this ).find( "h3:last" ).remove();
-    });
- 
-    $( "h3.fade" ).hover(function() {
-      $( this ).fadeOut( 100 );
-      $( this ).fadeIn( 500 );
+      $( this ).find( ".collection-album-image-overlay" ).remove();
     });
 
-    $( ".test" ).click(function() {
-      $( this ).slideUp();
-    });
+};
 
+var switchAlbum = function() {
 
-
-    // Code to switch views goes here.
+   // Code to switch views goes here.
     var albums = [albumPicasso, albumMarconi];
      changeAlbumView(albums[0]);
 
      var albumIndex = 0;
-     var $albumImage = $('.album-image img');
+     var $albumImage = $('.switch-album');
 
      $albumImage.click(function(event) {
 
@@ -120,6 +125,20 @@ if (document.URL.match(/\/album/)) {
 
        changeAlbumView(albums[albumIndex]);
      });
+
+};
+
+
+// This 'if' condition is used to preven the jQuery modifications
+// from happening on non-Album view pages.
+//  - This line checks if the current url has "/album" in its path using a regex.
+if (document.URL.match(/\/album/)) {
+  // Wait until the HTML is fully processed.
+  $(document).ready(function() {
+
+    albumOverlay();
+    switchAlbum();
+
 
   });
 }
