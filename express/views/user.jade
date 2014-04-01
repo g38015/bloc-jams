@@ -3,44 +3,44 @@ extends layouts/player_layout
 block content
   .container
     .row
-      .col-md-3
-        h3 Personal Information
+      .col-md-3(align="center")
+        h4.personal-information Personal Information
         img(src="/images/album-placeholder.png" height="200px" width="175px")
         div
-          button(class="btn btn-primary").
+          button(class="btn button-bloc move-btn").
             Upload
-      .col-md-9
+      .col-md-7.user-info-form
         .row
           form(role="form")
             .form-group
-              label(for="user_name") User Name
-              input(type="text", id="user_name", class="form-control")
+              label.form-text(for="user_name") User Name
+              input.form-input.form-control(type="text", id="user_name")
             .form-group
-              label(for="email") Email
-              input(type="email", id="email", class="form-control")
+              label.form-text(for="email") Email
+              input.form-input.form-control(type="email", id="email")
             .row
               .col-md-6
-                label(for="city") City
-                input(type="text", id="city", class="form-control")
+                label.form-text(for="city") City
+                input.form-input.form-control(type="text", id="city")
               .col-md-6
-                label(for="state") State
-                input(type="text", id="state", class="form-control")
+                label.form-text(for="state") State
+                input.form-input.form-control(type="text", id="state")
             .form-group
-              label(for="country") Country
-              input(type="text", id="country", class="form-control")
+              label.form-text(for="country") Country
+              input.form-input.form-control(type="text", id="country")
             .form-group
-              button(class="btn btn-primary btn-block").
+              button(class="btn button-bloc btn-block").
                 Save Profile
-        .row
+        .row.user-password
           form(role="form")
             .form-group
-              label(for="password") Password
-              input(type="password", id="password", class="form-control")
+              label.form-text(for="password") Password
+              input.form-input.form-control(type="password", id="password")
             .form-group
-              label(for="password_confirmation") Password Confirmation
-              input(type="password", id="password_confirmation", class="form-control")
+              label.form-text(for="password_confirmation") Password Confirmation
+              input.form-input.form-control(type="password", id="password_confirmation")
             .form-group
-              button(class="btn btn-primary btn-block").
+              button(class="btn button-bloc btn-block").
                 Change Password
-
+      .col-md-2
 

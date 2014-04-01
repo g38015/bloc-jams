@@ -1,0 +1,18 @@
+.button-bloc {
+  background-color: $default-btn;
+  text-color: white;
+  @include font-open-sans(700);
+
+  &:active {
+    background-color: $active-btn;
+    text-color: white;
+    @include font-open-sans(700);
+  }
+
+  &:disabled {
+    background-color: $active-btn;
+    text-color: white;
+    @include font-open-sans(700);
+  }
+
+}

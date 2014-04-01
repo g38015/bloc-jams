@@ -1,0 +1,28 @@
+.user-info-form {
+    margin-top: 55px;
+}
+
+.user-password {
+  margin-top: 15px;
+}
+
+.personal-information {
+  font-size: 24px;
+  @include font-open-sans(300);
+}
+
+.form-text {
+  font-size: 16px;
+  @include font-open-sans(300);
+}
+
+.form-input {
+  color: $form-input;
+  background-color: rgba(white, .6);
+  font-size: 16px;
+  @include font-open-sans(300);
+}
+
+.move-btn {
+  margin-top: 10px;
+}
