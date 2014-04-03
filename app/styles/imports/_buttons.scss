@@ -1,4 +1,4 @@
-.button-bloc {
+.btn-custom {
   background-color: $default-btn;
   color: white;
   letter-spacing: 2px;
@@ -15,6 +15,19 @@
 
   &:disabled {
     background-color: #B3B3B3;
+  }
+
+  &:hover {
+    color: #FFFFFF;
+  }
+
+  &:focus {
+    color: #FFFFFF;
+    outline: none;
+  }
+
+  &:active:focus {
+    outline: none;
   }
 
 }

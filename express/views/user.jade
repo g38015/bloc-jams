@@ -4,19 +4,18 @@ block content
   .container
     .row
       .col-md-3
-      .col-md-7
+      .col-md-7.center
         .btn-group.pager
-          button.btn.button-bloc YOUR ACCOUNT
-          button.btn.btn-default SUBSCRIPTION
+          button.btn.button-bloc.paginate-class YOUR ACCOUNT
+          button.btn.btn-default.paginate-opacity SUBSCRIPTION
       .col-md-2
 
     h4.personal-information Personal Information
     .row
       .col-md-3
         div(style="display: inline-block")
-          img(src="/images/album-placeholder.png" width="200px")
-
-          button.button-bloc.center-block.
+          img(src="/images/user-upload-placeholder.png")
+          button.btn.center-block.btn-custom.center.
             UPLOAD
 
       .col-md-7.user-info-form
@@ -36,8 +35,8 @@ block content
           .form-group.col-md-12
             label.form-text(for="country") Country
             input.form-input.form-control(type="text", id="country")
-            
-            button.button-bloc.center-block.
+          .form-group.col-md-12  
+            button.btn.center-block.btn-custom.
               SAVE PROFILE
       .col-md-2
 
@@ -52,7 +51,7 @@ block content
             label.form-text(for="password_confirmation") Password Confirmation
             input.form-input.form-control(type="password", id="password_confirmation")
           
-          button.button-bloc.center-block.
+          button.btn.center-block.btn-custom.
               CHANGE PASSWORD
       .col-md-2
         
