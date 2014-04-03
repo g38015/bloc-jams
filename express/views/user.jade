@@ -45,25 +45,21 @@ block content
               .form-group.col-md-12  
                 button.btn.center-block.btn-custom.
                   SAVE PROFILE
+            .row.user-password
+              .col-md-12.user-info-form
+                form(role="form")
+                  .form-group.col-md-12
+                    label.form-text(for="password") Password
+                    input.form-input.form-control(type="password", id="password")
+                  .form-group.col-md-12
+                    label.form-text(for="password_confirmation") Password Confirmation
+                    input.form-input.form-control(type="password", id="password_confirmation")
+                  
+                  button.btn.center-block.btn-custom.
+                      CHANGE PASSWORD
           .col-md-2
-
-        .row.user-password
-          .col-md-3
-          .col-md-7.user-info-form
-            form(role="form")
-              .form-group.col-md-12
-                label.form-text(for="password") Password
-                input.form-input.form-control(type="password", id="password")
-              .form-group.col-md-12
-                label.form-text(for="password_confirmation") Password Confirmation
-                input.form-input.form-control(type="password", id="password_confirmation")
-              
-              button.btn.center-block.btn-custom.
-                  CHANGE PASSWORD
-          .col-md-2
-        br
-        br  
-
+  br
+  br        
   .container
     .tab-content
       .tab-pane#cards
