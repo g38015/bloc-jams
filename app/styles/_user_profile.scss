@@ -1,6 +1,6 @@
 
-.user-info-form {
-    margin-top: 55px;
+.form-control {
+  border-radius: 0;
 }
 
 .user-password {
@@ -24,7 +24,3 @@
   @include font-open-sans(300);
 }
 
-.move-btn {
-  margin-top: 10px;
-  display: inline-block;
-}

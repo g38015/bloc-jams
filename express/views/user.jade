@@ -3,47 +3,57 @@ extends layouts/player_layout
 block content
   .container
     .row
-      .col-md-3(align="center")
-        h4.personal-information Personal Information
-        img(src="/images/album-placeholder.png" height="200px" width="175px")
-        div
-          button.button-bloc.btn.move-btn.
+      .col-md-3
+      .col-md-7
+        .btn-group.pager
+          button.btn.button-bloc YOUR ACCOUNT
+          button.btn.btn-default SUBSCRIPTION
+      .col-md-2
+
+    h4.personal-information Personal Information
+    .row
+      .col-md-3
+        div(style="display: inline-block")
+          img(src="/images/album-placeholder.png" width="200px")
+
+          button.button-bloc.center-block.
             UPLOAD
-          button.button-bloc.btn.move-btn(disabled="true").
-            DISABLED
+
       .col-md-7.user-info-form
-        .row
-          form(role="form")
-            .form-group
-              label.form-text(for="user_name") User Name
-              input.form-input.form-control(type="text", id="user_name")
-            .form-group
-              label.form-text(for="email") Email
-              input.form-input.form-control(type="email", id="email")
-            .row
-              .col-md-6
-                label.form-text(for="city") City
-                input.form-input.form-control(type="text", id="city")
-              .col-md-6
-                label.form-text(for="state") State
-                input.form-input.form-control(type="text", id="state")
-            .form-group
-              label.form-text(for="country") Country
-              input.form-input.form-control(type="text", id="country")
-            .form-group
-              button.btn.button-bloc.
-                SAVE PROFILE
-        .row.user-password
-          form(role="form")
-            .form-group
-              label.form-text(for="password") Password
-              input.form-input.form-control(type="password", id="password")
-            .form-group
-              label.form-text(for="password_confirmation") Password Confirmation
-              input.form-input.form-control(type="password", id="password_confirmation")
-            .form-group
-              button.btn.button-bloc.
-                CHANGE PASSWORD
+        form(role="form")
+          .form-group.col-md-12
+            label.form-text(for="user_name") User Name
+            input.form-input.form-control(type="text", id="user_name")
+          .form-group.col-md-12
+            label.form-text(for="email") Email
+            input.form-input.form-control(type="email", id="email")
+          .form-group.col-md-6
+            label.form-text(for="city") City
+            input.form-input.form-control(type="text", id="city")
+          .form-group.col-md-6
+            label.form-text(for="state") State
+            input.form-input.form-control(type="text", id="state")
+          .form-group.col-md-12
+            label.form-text(for="country") Country
+            input.form-input.form-control(type="text", id="country")
+            
+            button.button-bloc.center-block.
+              SAVE PROFILE
+      .col-md-2
+
+    .row.user-password
+      .col-md-3
+      .col-md-7.user-info-form
+        form(role="form")
+          .form-group.col-md-12
+            label.form-text(for="password") Password
+            input.form-input.form-control(type="password", id="password")
+          .form-group.col-md-12
+            label.form-text(for="password_confirmation") Password Confirmation
+            input.form-input.form-control(type="password", id="password_confirmation")
+          
+          button.button-bloc.center-block.
+              CHANGE PASSWORD
       .col-md-2
         
 

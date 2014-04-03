@@ -1,11 +1,16 @@
 .button-bloc {
   background-color: $default-btn;
-  text-color: white;
+  color: white;
   letter-spacing: 2px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
   @include font-open-sans(700);
 
   &:active {
     background-color: $active-btn;
+    outline: none;
   }
 
   &:disabled {
