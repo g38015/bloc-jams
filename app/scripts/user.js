@@ -1,15 +1,19 @@
 $(document).ready(function() {
 
-  var changeDiv = null;
+  $('#home').show();
 
+  var changeDiv = $('#home');
+  var changeCards = $('#cards');
+
+  
   $('#btn-home').click(function() {
-    changeDiv = $('#cards').detach();
-    $('#btn-cards').removeAttr('disabled');
+    $('#empty').html(changeDiv);
   });
+
 
   $('#btn-cards').click(function() {
-    $('#test-empty').html(changeDiv);
-    $('#btn-home').removeAttr('disabled');
+    $('#empty').html(changeCards);
   });
+
 
 });
