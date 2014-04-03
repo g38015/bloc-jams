@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
-  console.log('got here user.js');
-  $('.tabs').tabslet();
+  
+  $('#btn-home').click(function() {
+      //$('#cards').empty();
+  })
+
+  $('#btn-cards').click(function() {
+      //$('#home').empty();
+  })
 
 });
