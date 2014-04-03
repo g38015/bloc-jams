@@ -5,82 +5,94 @@ block content
     .row
       .col-md-3
       .col-md-7.center
-        .btn-group.pager
-          button.btn.button-bloc.paginate-class YOUR ACCOUNT
-          button.btn.btn-default.paginate-opacity SUBSCRIPTION
+        .btn-group.pagination
+          button.btn.button-bloc.paginate-class
+            a(href="#home", data-toggle="tab").
+              YOUR ACCOUNT
+          button.btn.btn-default.paginate-opacity
+            a(href="#cards", data-toggle="tab").
+              SUBSCRIPTION
       .col-md-2
 
-    h4.personal-information Personal Information
-    .row
-      .col-md-3
-        div(style="display: inline-block")
-          img(src="/images/user-upload-placeholder.png")
-          button.btn.center-block.btn-custom.center.
-            UPLOAD
+  .container
+    .tab-content
+      .tab-pane#home
+        h4.personal-information Personal Information
+        .row
+          .col-md-3
+            div(style="display: inline-block")
+              img(src="/images/user-upload-placeholder.png")
+              button.btn.center-block.btn-custom.center.
+                UPLOAD
 
-      .col-md-7.user-info-form
-        form(role="form")
-          .form-group.col-md-12
-            label.form-text(for="user_name") User Name
-            input.form-input.form-control(type="text", id="user_name")
-          .form-group.col-md-12
-            label.form-text(for="email") Email
-            input.form-input.form-control(type="email", id="email")
-          .form-group.col-md-6
-            label.form-text(for="city") City
-            input.form-input.form-control(type="text", id="city")
-          .form-group.col-md-6
-            label.form-text(for="state") State
-            input.form-input.form-control(type="text", id="state")
-          .form-group.col-md-12
-            label.form-text(for="country") Country
-            input.form-input.form-control(type="text", id="country")
-          .form-group.col-md-12  
+          .col-md-7.user-info-form
+            form(role="form")
+              .form-group.col-md-12
+                label.form-text(for="user_name") User Name
+                input.form-input.form-control(type="text", id="user_name")
+              .form-group.col-md-12
+                label.form-text(for="email") Email
+                input.form-input.form-control(type="email", id="email")
+              .form-group.col-md-6
+                label.form-text(for="city") City
+                input.form-input.form-control(type="text", id="city")
+              .form-group.col-md-6
+                label.form-text(for="state") State
+                input.form-input.form-control(type="text", id="state")
+              .form-group.col-md-12
+                label.form-text(for="country") Country
+                input.form-input.form-control(type="text", id="country")
+              .form-group.col-md-12  
+                button.btn.center-block.btn-custom.
+                  SAVE PROFILE
+          .col-md-2
+
+        .row.user-password
+          .col-md-3
+          .col-md-7.user-info-form
+            form(role="form")
+              .form-group.col-md-12
+                label.form-text(for="password") Password
+                input.form-input.form-control(type="password", id="password")
+              .form-group.col-md-12
+                label.form-text(for="password_confirmation") Password Confirmation
+                input.form-input.form-control(type="password", id="password_confirmation")
+              
+              button.btn.center-block.btn-custom.
+                  CHANGE PASSWORD
+          .col-md-2
+        br
+        br  
+
+  .container
+    .tab-content
+      .tab-pane#cards
+        .row
+          .col-md-2
+          .col.md-8
+            img(src="/images/subscription-placeholder.png")
+            img(src="/images/subscription-placeholder.png")
+            img(src="/images/subscription-placeholder.png")
+          .col.md-2
+        br
+        br 
+
+        .row
+          .col-md-3
+          .col-md-6
+            table.table.album-song-list-table
+              thead
+                tr
+                  th.personal-information(colspan="2") Credit Cards
+              tbody
+                tr 
+                  td.col-md-1 Visa
+                  td.col-md-4 XXXX-1234
+                  td.col-md-1 img
+                tr 
+                  td.col-md-1 Visa
+                  td.col-md-4 XXXX-1234
+                  td.col-md-1 img
             button.btn.center-block.btn-custom.
-              SAVE PROFILE
-      .col-md-2
-
-    .row.user-password
-      .col-md-3
-      .col-md-7.user-info-form
-        form(role="form")
-          .form-group.col-md-12
-            label.form-text(for="password") Password
-            input.form-input.form-control(type="password", id="password")
-          .form-group.col-md-12
-            label.form-text(for="password_confirmation") Password Confirmation
-            input.form-input.form-control(type="password", id="password_confirmation")
-          
-          button.btn.center-block.btn-custom.
-              CHANGE PASSWORD
-      .col-md-2
-    br
-    br  
-    .row
-      .col-md-2
-      .col.md-8
-        img(src="/images/subscription-placeholder.png")
-        img(src="/images/subscription-placeholder.png")
-        img(src="/images/subscription-placeholder.png")
-      .col.md-2
-    br
-    br 
-    .row
-      .col-md-3
-      .col-md-6
-        table.table.album-song-list-table
-          thead
-            tr
-              th.personal-information(colspan="2") Credit Cards
-          tbody
-            tr 
-              td.col-md-1 Visa
-              td.col-md-4 XXXX-1234
-              td.col-md-1 img
-            tr 
-              td.col-md-1 Visa
-              td.col-md-4 XXXX-1234
-              td.col-md-1 img
-        button.btn.center-block.btn-custom.
-          ADD CARD
-      .col-md-3
+              ADD CARD
+          .col-md-3
