@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-  
+  var changeDiv = null;
+
   $('#btn-home').click(function() {
-      //$('#cards').empty();
-  })
+    changeDiv = $('#cards').detach();
+    $('#btn-cards').removeAttr('disabled');
+  });
 
   $('#btn-cards').click(function() {
-      //$('#home').empty();
-  })
+    $('#test-empty').html(changeDiv);
+    $('#btn-home').removeAttr('disabled');
+  });
 
 });
