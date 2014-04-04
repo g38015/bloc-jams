@@ -1,22 +1,27 @@
 extends layouts/player_layout
 
 block content
-  .container
-    .row
+  .container.user-profile
+    .row.tab-button-container
       .col-md-3
+        | Content
       .col-md-7.center
         .btn-group.pagination
-          button.btn.button-bloc.paginate-class#btn-home
-            a(href="#home", data-toggle="tab").
+          button.btn.btn-default.paginate-opacity#btn-home
+            a(href="#home", data-toggle="tab-home").
               YOUR ACCOUNT
           button.btn.btn-default.paginate-opacity#btn-cards
-            a(href="#cards", data-toggle="tab").
+            a(href="#cards", data-toggle="tab-cards").
               SUBSCRIPTION
+      .clearfix
       .col-md-2
+        | Content
+      .col-md-1
+        | Content
 
-  .container
-    .tab-content#empty
-      .tab-pane#home
+
+    .tab-content-b
+      .tab-pane#tab-home
         h4.personal-information Personal Information
         .row
           .col-md-3
@@ -24,7 +29,6 @@ block content
               img(src="/images/user-upload-placeholder.png")
               button.btn.center-block.btn-custom.center.
                 UPLOAD
-
           .col-md-7.user-info-form
             form(role="form")
               .form-group.col-md-12
@@ -36,9 +40,11 @@ block content
               .form-group.col-md-6
                 label.form-text(for="city") City
                 input.form-input.form-control(type="text", id="city")
+              .clearfix
               .form-group.col-md-6
                 label.form-text(for="state") State
                 input.form-input.form-control(type="text", id="state")
+              .clearfix
               .form-group.col-md-12
                 label.form-text(for="country") Country
                 input.form-input.form-control(type="text", id="country")
@@ -54,14 +60,12 @@ block content
                   .form-group.col-md-12
                     label.form-text(for="password_confirmation") Password Confirmation
                     input.form-input.form-control(type="password", id="password_confirmation")
-                  
                   button.btn.center-block.btn-custom.
                       CHANGE PASSWORD
           .col-md-2
          
-  .container
-    .tab-content#empty2
-      .tab-pane#cards
+
+      .tab-pane#tab-cards
         .row
           .col-md-2
           .col.md-8
