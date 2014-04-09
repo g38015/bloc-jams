@@ -12,9 +12,10 @@ var changeTabHandler = function(event) {
 
 $(document).ready(function() {
 
-  var $tabs = $(tabsContainerName + " .pagination button");
+  //TODO remove comment block
+  /*var $tabs = $(tabsContainerName + " .pagination button");
   $tabs.click(changeTabHandler);
-  $tabs[0].click();
+  $tabs[0].click();*/
 
 
   // $('#home').show();

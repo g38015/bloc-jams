@@ -1,4 +1,4 @@
-
+/*
 // Example Album 1
 var albumPicasso = {
   name: 'The Colors',
@@ -141,4 +141,4 @@ if (document.URL.match(/\/album/)) {
 
 
   });
-}
+}*/

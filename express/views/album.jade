@@ -1,19 +1,25 @@
 extends layouts/player_layout
 
 block content
-  .container.album-container
+  .container.album-container(ng_controller="Album.controller")
     .row.album-header-container
       .col-md-3.album-image
-        img(src="/images/album-placeholder.png")
+        img(ng_src="{{album.albumArtUrl}}", ng_click="changeAlbum()")
       .col-md-9.col-md-push-1
         .album-header-information
-          h3.album-title The Colors
-          h4.album-artist Pablo Picasso
-          h5.album-meta-info 1881 on Cubism
+          h3.album-title {{ album.name }}
+          h4.album-artist {{ album.album-artist }}
+          h5.album-meta-info {{ album.year }} on {{ album.label }}
           button(class="switch-album btn btn-custom").
             CHANGE ALBUM 
 
     .row
       .col-md-12
         table.table.album-song-list-table
-          
+          tr(ng_repeat="song in album.songs")
+            td
+              | {{$index + 1}}
+            td
+              | {{song.name}}
+            td
+              | {{song.length}}
