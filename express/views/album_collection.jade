@@ -3,12 +3,13 @@ extends layouts/player_layout
 block content
   .container
     .row.album-header-information.collection
-      //- - for(var i = 0; i < 33; i++)
-      //-   .col-md-2
-      //-     .thumbnail
-      //-       img(src="/images/album-placeholder.png")
-      //-     .album-header-placeholder
-      //-       a(href="/album").album-title-collection Album Name
-      //-       br
-      //-       a(href="/album").album-artist.collection Artist Name
-      //-       p.album-meta-info.collection X Songs
+      - for(var i = 0; i < 33; i++)
+         .col-md-2
+           .thumbnail
+             img(src="/images/album-placeholder.png")
+           .album-header-placeholder
+             a(href="/album").album-title-collection Album Name
+             br
+             a(href="/album").album-artist.collection Artist Name
+             p.album-meta-info.collection X Songs
+

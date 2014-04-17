@@ -5,6 +5,7 @@ require('./user_profile');
 require('./practice');
 require('./controllers');
 require('./models');
+require('./directives');
 
 // Top level application module for our website.
 angular.module('BlocJams', [
